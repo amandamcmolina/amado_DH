@@ -7,18 +7,22 @@
 </head>
 <body>
     
+
     @foreach ( $produtos as $p )
         <p>{{ $p->nome }}</p>
         <p>{{ $p->descricao }}</p>
         <p>{{ $p->marca }}</p>
         <p>{{ $p->preco }}</p>
         <p>{{ $p->quantidade }}</p>
-
+        
+            @for($i=0; $i < count($p->imagemProdutos); $i++ )
+                <img src=" {{ url($p->imagemProdutos[$i]->caminhoDaImagem) }} ">
+            @endfor
     @endforeach
 
-    @foreach ($imagensProdutos as $img )
+    {{-- @foreach ($imagensProdutos as $img )
         <img src="{{ url($img->caminhoDaImagem) }}">
-    @endforeach
+    @endforeach --}}
 
 
 </body>
