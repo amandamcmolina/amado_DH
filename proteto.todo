@@ -1,0 +1,14 @@
+Lista de afazeres
+
+Transferir o html/css para o formato blade @done
+Modelou o banco de dados @done
+Criar os models e migrations das entidades do banco de dados
+Criar os controllers da nossa aplicação
+CRUD dos produtos
+Página/área de admin mostrando produtos
+Sistema de login
+Tornar os layouts dinâmicos 
+
+Sistema de login usando google/facebook
+Carrinho
+Pagamento -> integrar com sistemas de pagamento
