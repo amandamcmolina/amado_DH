@@ -19,7 +19,7 @@
                 <img src=" {{ url($p->imagemProdutos[$i]->caminhoDaImagem) }} ">
             @endfor
     @endforeach
-
+  
     {{-- @foreach ($imagensProdutos as $img )
         <img src="{{ url($img->caminhoDaImagem) }}">
     @endforeach --}}

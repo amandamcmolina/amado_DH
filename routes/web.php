@@ -34,4 +34,7 @@ Route::get('/pagamento', function(){
 });
 
 
-Route::get('/teste', 'ProdutosController@index');
+Route::get('/admin/produtos', 'ProdutosController@index');
+Route::post('/admin/produtos', 'ProdutosController@store');
+Route::get('/admin/produtos/create', 'ProdutosController@create');
+Route::get('/admin/produtos/{id}', 'ProdutosController@show');
