@@ -13,7 +13,11 @@ class PedidosProdutos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('pedidos_produtos', function (Blueprint $table) {
+            $table->foreignId('pedido_id')->constrained();
+        $table->foreignId('produto_id')->constrained();
+        });
+        
     }
 
     /**
@@ -23,6 +27,6 @@ class PedidosProdutos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('pedidos_produtos');
     }
 }

@@ -6,7 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedido extends Model
 {
-    public function users(){
+    protected $fillable = ['user_id'];
+
+
+    public function user(){
         return $this->belongsTo('App\User');
+    }
+
+    public function produtos()
+    {
+        return $this->belongsToMany('App\Produto', 'pedidos_produtos');
     }
 }
