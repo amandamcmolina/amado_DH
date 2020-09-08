@@ -9,12 +9,14 @@ use App\Produto;
 
 class ProdutosController extends Controller
 {
+    //Exibe todos os produtos
     public function index()
     {
         $produtos = Produto::all();
         return view('teste', compact('produtos'));
     }
 
+    //Exibe um produto em detalhes
     public function show($id)
     {
         $produto = Produto::find($id);
@@ -36,6 +38,30 @@ class ProdutosController extends Controller
     {
         //criar novo produto
         $produto = new Produto;
+
+        //Atribuir valores do formulári ao produto criado
+        $produto->nome = request('nome');
+        $produto->descricao = request('descricao');
+        $produto->marca = request('marca');
+        $produto->quantidade = request('quantidade');
+        $produto->preco = request('preco');
+
+        $produto->save();
+        return redirect('/admin/produtos');
+    }
+
+    //
+    public function edit($id)
+    {
+        $produto = Produto::find($id);
+
+        return view('adminProdutos.edit', compact('produto'));
+    }
+
+    public function update($id)
+    {
+        //Encontrar produto
+        $produto = Produto::find($id);;
 
         //Atribuir valores do formulári ao produto criado
         $produto->nome = request('nome');
